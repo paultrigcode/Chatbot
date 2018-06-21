@@ -1,5 +1,6 @@
 import os
 
+
 class Dialogue:
     def __init__(self):
         # holds a k:v pair of tag and words(a list) that have been subbed for belonging to that tag

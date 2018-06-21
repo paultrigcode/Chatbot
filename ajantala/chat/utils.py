@@ -2,6 +2,7 @@ from . ydialogue import YorubaDialogue
 
 from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
+from chat.dialogue.story import FLOW
 
 def save_to_db(sentence):
     with open('db', 'w') as fp:
@@ -9,13 +10,12 @@ def save_to_db(sentence):
 
 def load_response(sentence):
     dailogue = YorubaDialogue()
-    respond = dailogue.respond(sentence)
-    print("respond", respond)
+    response = dailogue.respond(sentence)
+    print("response", response)
     chatbot = load_chatbot()
-    # bot_response = chatbot.get_response(sentence)
-    bot_response = "kò yé mi"
+    bot_response = get_bot_response(sentence, chatbot)
     print("bot response", bot_response)
-    return respond if respond else bot_response 
+    return response if response else bot_response 
 
 
 def load_chatbot():
@@ -24,6 +24,13 @@ def load_chatbot():
 
     chatbot = ChatBot("Ajantala")
     chatbot.set_trainer(ListTrainer)
-    chatbot.train(conversation)
+    chatbot.train(FLOW)
 
     return chatbot
+
+def get_bot_response(sentence, bot):
+    response = bot.get_response(sentence)
+    print("respnose confidence: ", response.confidence)
+    if response.confidence < 0.5:
+        return  "Ẹ sàlàyé síwájú si"
+    return response

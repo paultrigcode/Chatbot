@@ -1,0 +1,99 @@
+{% load static %}
+
+<html>
+    <head>
+        <link href="{% static 'chat/css/bootstrap.min.css' %}" rel="stylesheet" id="bootstrap-css">
+        <link href="{% static 'chat/css/mine.css' %}" rel="stylesheet">  
+    </head>
+    <body>
+        <div class="content">
+                <nav class="navbar bg-dark d-flex justify-content-center navbar-fixed-top welcome" style="background-color: #e9ecef">
+                        <a class="navbar-brand" href="#">
+                            
+                            <h1 style="color: aliceblue"><img src="{% static 'chat/images/drums.png' %}" width="200" height="100" class="d-inline-block align-center" alt="">
+                                Àjàntálá
+                            </h1>
+                        </a>
+                    </nav>
+                    <div class="" style="background-color: #e0e0de">
+            
+                        <div class="row chatbox" data-spy="scroll" data-spy="scroll" data-target=".navbar" data-offset="50">
+                                <ul>
+                                    <li style="width:100%">
+                                            <div class="msj macro">
+                                                <div class="text text-l">
+                                                    <p> Àjàntálá: {{ greeting }} </p>
+                                                    <p><small>11:30</small></p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    {% for convo in conversations %}
+                                        <li style="width:100%;">
+                                                <div class="msj-rta macro">
+                                                    <div class="text text-r">
+                                                        <p>User: {{ convo.sentence }}</p>
+                                                            <p><small>{{ convo.time }}</small></p>
+                                                    </div>
+                                                <div class="avatar" style="padding:0px 0px 0px 10px !important"></div>                                
+                                            </li>
+                                            <li style="width:100%">
+                                                    <div class="msj macro">
+                                                        <div class="text text-l">
+                                                            <p> Àjàntálá: {{ convo.reply }} </p>
+                                                            <p><small>{{ convo.time }}</small></p>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                        {% endfor %}
+                                    </ul>
+                                    <form action="" method="POST" class="input-group buttonbox" style="background:whitesmoke !important">
+                                            <div class="input-group-prepend">
+                                              <button class="btn btn-outline-secondary" value="do" type="button">\</button>
+                                              <button class="btn btn-outline-secondary" value="mi" type="button">/</button>
+                                              <button class="btn btn-outline-secondary" value="dot" type="button">.</button>
+                                            </div>
+                                            <input type="text" style="background:whitesmoke !important" class="form-control" placeholder="Type a message" id="myInput" name="sentence" aria-label="" aria-describedby="basic-addon1" autofocus>
+                                            <button type="submit" id="myBtn" style="position: absolute; left: -9999px; width: 1px; height: 1px;"></button>
+                                            <button class="btn btn-secondary" type="button" onclick="sendPressed()">Send</button>
+                                    </form>
+                                
+            
+                                    
+                        </div>
+                    </div>
+        </div>
+        
+        <script src="{% static 'chat/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'chat/js/jquery.min.js' %}"></script>
+        <script src="{% static 'chat/js/mine.js' %}"></script>    
+    </body>
+
+    <style>
+            @media (min-width: 800px){
+                .content {
+                    position: relative;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-image: url("{% static 'chat/images/bg.jpg'  %}");
+                    height: 100%;
+        
+                }
+            }
+        </style>
+<script>
+    // Get the input field
+var input = document.getElementById("myInput");
+
+// Execute a function when the user releases a key on the keyboard
+input.addEventListener("keyup", function(event) {
+  // Cancel the default action, if needed
+  event.preventDefault();
+  // Number 13 is the "Enter" key on the keyboard
+  if (event.keyCode === 13) {
+    // Trigger the button element with a click
+    document.getElementById("myBtn").click();
+  }
+});</script>
+</html>
+

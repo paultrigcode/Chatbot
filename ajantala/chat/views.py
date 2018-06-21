@@ -39,6 +39,37 @@ def index(request):
         return render(request, 'chat/index.html', {"greeting": greeting})
 
 
+@csrf_exempt
+def index2(request):
+    if request.method == "POST":
+        sentence = request.POST.get('sentence')
+        #print("sentence", sentence)
+        text_response = load_response(sentence)
+        # load existing convos ..
+        with open('db','rb') as fp:
+            conversations = pickle.load(fp)
+        
+        # add current convo to exisiting convo
+        time = datetime.now().strftime('%H:%M')
+        conversations.append({'sentence': sentence, 'reply': text_response, 'time': time})
+
+        # update convo db
+        with open('db','wb') as fp:
+            pickle.dump(conversations, fp)
+        
+        print('conversations', conversations)
+
+        greeting = load_greetings()
+        return render(request, 'chat/new_result.html', {'conversations': conversations, 'greeting': greeting})
+    
+    elif request.method == "GET":
+        conversations = []
+        # clear db
+        with open('db','wb') as fp:
+            conversations = pickle.dump(conversations, fp)
+        greeting = load_greetings()
+        return render(request, 'chat/new_index.html', {"greeting": greeting})
+
 def load_greetings():
     now = datetime.now()
     now_time = now.time()

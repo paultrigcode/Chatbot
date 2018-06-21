@@ -1,8 +1,8 @@
 {% load static %}
 
-<link href="{% static 'chat/bootstrap.min.css' %}" rel="stylesheet" id="bootstrap-css">
-<script src="{% static 'chat/bootstrap.min.js' %}"></script>
-<script src="{% static 'chat/jquery.min.js' %}"></script>
+<link href="{% static 'chat/css/bootstrap.min.css' %}" rel="stylesheet" id="bootstrap-css">
+<script src="{% static 'chat/css/bootstrap.min.js' %}"></script>
+<script src="{% static 'chat/js/jquery.min.js' %}"></script>
 <!------ Include the above in your HEAD tag ---------->
 
 <!DOCTYPE html>
@@ -114,7 +114,7 @@
     padding-right:10px;
 }
 .macro{
-    margin-top:5px;width:85%;border-radius:5px;padding:5px;display:flex;
+    margin-top:5px;width:45%;border-radius:5px;padding:5px;display:flex;
 }
 .msj-rta{
     float:right;background:whitesmoke;
@@ -181,45 +181,4 @@ input:focus{
    
 </style>
 
-<script>
-    // Get the input field
-var input = document.getElementById("myInput");
-
-// Execute a function when the user releases a key on the keyboard
-input.addEventListener("keyup", function(event) {
-  // Cancel the default action, if needed
-  event.preventDefault();
-  // Number 13 is the "Enter" key on the keyboard
-  if (event.keyCode === 13) {
-    // Trigger the button element with a click
-    document.getElementById("myBtn").click();
-  }
-});
-</script>
-
-<script>
-    $('button').click(function() {
-        var sentence = $("#myInput").val();
-        var sign = this.value;
-        var do_lower_swaps = {a:"à", e:"è", ẹ:"ẹ̀", i:"ì", o: "ò", ọ:"ọ̀", u:"ù"};
-        var mi_lower_swaps = {a:"á", e:"é", ẹ:"ẹ́", i:"í", o: "ó", ọ:"ọ́", u:"ú", n:"ń"};
-        var dot_swaps = {e: 'ẹ', è: "ẹ̀", é:"ẹ́", o: 'ọ', ò: "ọ̀", s: 'ṣ'}
-        var sub = ''
-        // alert(sign);
-        if (['do', 'mi', 'dot'].indexOf(sign) > -1) {
-            var lastChar = sentence.slice(-1)
-            if (sign == 'do'){
-                sub = do_lower_swaps[lastChar]
-                // alert(sub);
-            } 
-            else if (sign == 'mi'){
-                sub = mi_lower_swaps[lastChar]
-                // alert(sub);
-            }
-        }
-        if (sub !="" & sub != undefined){
-            document.getElementById("myInput").value = sentence.slice(0, -1) + sub;
-        }   
-});
-</script>
 

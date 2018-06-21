@@ -1,2 +1,2 @@
-# ajanta
-A Yoruba Chat Bot
+# Ajantala
+A Yoruba Chat Bot powered by Django and PyQt

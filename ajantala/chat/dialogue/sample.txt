@@ -1,0 +1,24 @@
+Machine: Ẹkáàrọ
+user: Ẹkú ojúmọ́
+machine: Gbogbo ilé ńkọ́?
+user: Alaafia lawà
+machine: Mo mà ri yín lòní, sé kò sí ?
+user: Kó má bà sí ni
+machine: Kí ló sẹ lẹ̀?
+user: Èmi àti àbúrò mi jà lana
+machine: Ẹ̀yin àti àbúrò yín jà lana?
+user: Bẹ́ẹ̀ ni
+machine: Àbúrò yín wo?
+user: Adé ọmọ ìyá mi
+machine: Adé ọmọ ìyá yin?
+user: Bẹ́ẹ̀ ni
+machine: Kí ló sẹ lẹ̀?
+user: Kò fẹ́ dá owó ní pàdé mòlẹ́bí ni
+machine: Ẹ sàlàyé síwájú si
+user: Owó àwọn obìrin ilé ni
+machine: Kò yé mi tó
+user: Owó ìdàgbà sókè ni
+machine: Ẹ sọ fun pé kó wá rí mi
+user: Ẹ seun
+machine: Kò tópẹ́
+user: Ódàbọ̀

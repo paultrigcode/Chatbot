@@ -1,0 +1,200 @@
+{% load static %}
+
+
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" id="bootstrap-css">
+<link href="{% static 'css/mine.css' %}" rel="stylesheet">  
+
+
+<div class="container">
+    <div class="card bg-light mb-3">
+        <nav class="navbar bg-dark d-flex justify-content-center navbar-fixed-top welcome" style="background-color: #e9ecef">
+            <a class="navbar-brand" href="#">
+                
+                <h1 style="color: aliceblue"><img src="{% static 'chat/images/drums.png' %}" width="200" height="100" class="d-inline-block align-center" alt="">
+                    Àjàntálá
+                </h1>
+            </a>
+        </nav>
+        <div class="card-header">Question 1</div>
+        <div class="card-body">
+          <h5 class="card-title">How can you rate Àjàntálá's performance?</h5>
+                <!--Radio group-->
+                <div class="form-check">
+                    <input class="form-check-input" name="group100" type="radio" id="radio100">
+                    <label class="form-check-label" for="radio100">Very Effective</label>
+                </div>
+          
+                <div class="form-check">
+                    <input class="form-check-input" name="group100" type="radio" id="radio101" checked>
+                    <label class="form-check-label" for="radio101">Moderately Effective</label>
+                </div>
+          
+                <div class="form-check">
+                    <input class="form-check-input" name="group100" type="radio" id="radio102">
+                    <label class="form-check-label" for="radio102">Slightly Effective</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" name="group100" type="radio" id="radio102">
+                    <label class="form-check-label" for="radio102">Not Effective</label>
+                </div>
+        </div>
+      </div>
+      <div class="card bg-light mb-3">
+          <div class="card-header">Question 2</div>
+          <div class="card-body">
+            <h5 class="card-title">This is a good attempt of prolonging the existence of Yoruba language through technology</h5>
+                  <!--Radio group-->
+                  <div class="form-check">
+                      <input class="form-check-input" name="group101" type="radio" id="radio100">
+                      <label class="form-check-label" for="radio100">Yes</label>
+                  </div>
+            
+                  <div class="form-check">
+                      <input class="form-check-input" name="group101" type="radio" id="radio101" checked>
+                      <label class="form-check-label" for="radio101">No</label>
+                  </div>
+            
+                  <div class="form-check">
+                      <input class="form-check-input" name="group101" type="radio" id="radio102">
+                      <label class="form-check-label" for="radio102">Kind of</label>
+                  </div>
+                  <div class="form-check">
+                      <input class="form-check-input" name="group101" type="radio" id="radio102">
+                      <label class="form-check-label" for="radio102">I don't Know</label>
+                  </div>
+          </div>
+        </div>
+
+        <div class="card bg-light mb-3">
+            <div class="card-header">Question 3</div>
+            <div class="card-body">
+              <h5 class="card-title">How friendly is Àjàntálá's interface?</h5>
+                    <!--Radio group-->
+                    <div class="form-check">
+                        <input class="form-check-input" name="group102" type="radio" id="radio100">
+                        <label class="form-check-label" for="radio100">Very friendly</label>
+                    </div>
+              
+                    <div class="form-check">
+                        <input class="form-check-input" name="group102" type="radio" id="radio101" checked>
+                        <label class="form-check-label" for="radio101">Moderately friendly</label>
+                    </div>
+              
+                    <div class="form-check">
+                        <input class="form-check-input" name="group102" type="radio" id="radio102">
+                        <label class="form-check-label" for="radio102">Slightly friendly</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" name="group102" type="radio" id="radio102">
+                        <label class="form-check-label" for="radio102">Not friendly</label>
+                    </div>
+            </div>
+          </div>
+
+        <div class="card bg-light mb-3">
+            <div class="card-header">Question 4</div>
+            <div class="card-body">
+              <h5 class="card-title">Rate Àjàntálá's response time</h5>
+                    <!--Radio group-->
+                    <div class="form-check">
+                        <input class="form-check-input" name="group103" type="radio" id="radio100">
+                        <label class="form-check-label" for="radio100">Very Fast</label>
+                    </div>
+              
+                    <div class="form-check">
+                        <input class="form-check-input" name="group103" type="radio" id="radio101" checked>
+                        <label class="form-check-label" for="radio101">Fast</label>
+                    </div>
+              
+                    <div class="form-check">
+                        <input class="form-check-input" name="group103" type="radio" id="radio102">
+                        <label class="form-check-label" for="radio102">Slow</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" name="group103" type="radio" id="radio102">
+                        <label class="form-check-label" for="radio102">Very Slow</label>
+                    </div>
+            </div>
+        </div>
+        <div class="card bg-light mb-3">
+            <div class="card-header">Question 5</div>
+            <div class="card-body">
+              <h5 class="card-title">How can you rate Àjàntálá's response?</h5>
+                    <!--Radio group-->
+                    <div class="form-check">
+                        <input class="form-check-input" name="group104" type="radio" id="radio100">
+                        <label class="form-check-label" for="radio100">Excellent</label>
+                    </div>
+              
+                    <div class="form-check">
+                        <input class="form-check-input" name="group104" type="radio" id="radio101" checked>
+                        <label class="form-check-label" for="radio101">Good</label>
+                    </div>
+              
+                    <div class="form-check">
+                        <input class="form-check-input" name="group104" type="radio" id="radio102">
+                        <label class="form-check-label" for="radio102">Fair</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" name="group104" type="radio" id="radio102">
+                        <label class="form-check-label" for="radio102">Bad</label>
+                    </div>
+            </div>
+        </div>
+        <div class="card bg-light mb-3">
+            <div class="card-header">Question 6</div>
+            <div class="card-body">
+              <h5 class="card-title">How can you rate Àjàntálá's Intelligence?</h5>
+                    <!--Radio group-->
+                    <div class="form-check">
+                        <input class="form-check-input" name="group105" type="radio" id="radio100">
+                        <label class="form-check-label" for="radio100">Very High</label>
+                    </div>
+              
+                    <div class="form-check">
+                        <input class="form-check-input" name="group105" type="radio" id="radio101" checked>
+                        <label class="form-check-label" for="radio101">High</label>
+                    </div>
+              
+                    <div class="form-check">
+                        <input class="form-check-input" name="group105" type="radio" id="radio102">
+                        <label class="form-check-label" for="radio102">Low</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" name="group105" type="radio" id="radio102">
+                        <label class="form-check-label" for="radio102">Very Low</label>
+                    </div>
+            </div>
+        </div>
+
+        <div class="card bg-light mb-3">
+            <div class="card-header">Question 7</div>
+            <div class="card-body">
+              <h5 class="card-title">Does Àjàntálá's response potray a Yorùbá speaker?</h5>
+                    <!--Radio group-->
+                    <div class="form-check">
+                        <input class="form-check-input" name="group106" type="radio" id="radio100">
+                        <label class="form-check-label" for="radio100"> Yes </label>
+                    </div>
+              
+                    <div class="form-check">
+                        <input class="form-check-input" name="group106" type="radio" id="radio101" checked>
+                        <label class="form-check-label" for="radio101"> No</label>
+                    </div>
+              
+                    <div class="form-check">
+                        <input class="form-check-input" name="group106" type="radio" id="radio102">
+                        <label class="form-check-label" for="radio102"> Kindoff </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" name="group106" type="radio" id="radio102">
+                        <label class="form-check-label" for="radio102">I don't Know</label>
+                    </div>
+            </div>
+        </div>
+        <button class="btn btn-secondary btn-lg" type="submit">Submit</button>
+  </div>
+
+  
+
+

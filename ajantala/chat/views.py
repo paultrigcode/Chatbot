@@ -59,8 +59,10 @@ def index2(request):
         
         print('conversations', conversations)
 
+        start_time = conversations[0].get('time')
+
         greeting = load_greetings()
-        return render(request, 'chat/new_result.html', {'conversations': conversations, 'greeting': greeting})
+        return render(request, 'chat/new_result.html', {'conversations': conversations, 'greeting': greeting, 'start_time': start_time})
     
     elif request.method == "GET":
         conversations = []

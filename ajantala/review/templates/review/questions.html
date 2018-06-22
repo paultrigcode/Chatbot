@@ -4,17 +4,20 @@
 <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" id="bootstrap-css">
 <link href="{% static 'css/mine.css' %}" rel="stylesheet">  
 
+<div class="container" >
+    <nav class="navbar bg-dark d-flex justify-content-center navbar-fixed-top welcome" style="background-color: #e9ecef">
+      <a class="navbar-brand" href="#">
+            
+            <h1 style="color: aliceblue"><img src="{% static 'chat/images/drums.png' %}" width="200" height="100" class="d-inline-block align-center" alt="">
+                Àjàntálá
+            </h1>
+        </a>
+    </nav>
+</div>
 
 <div class="container">
+  <form method="POST">
     <div class="card bg-light mb-3">
-        <nav class="navbar bg-dark d-flex justify-content-center navbar-fixed-top welcome" style="background-color: #e9ecef">
-            <a class="navbar-brand" href="#">
-                
-                <h1 style="color: aliceblue"><img src="{% static 'chat/images/drums.png' %}" width="200" height="100" class="d-inline-block align-center" alt="">
-                    Àjàntálá
-                </h1>
-            </a>
-        </nav>
         <div class="card-header">Question 1</div>
         <div class="card-body">
           <h5 class="card-title">How can you rate Àjàntálá's performance?</h5>
@@ -192,7 +195,8 @@
                     </div>
             </div>
         </div>
-        <button class="btn btn-secondary btn-lg" type="submit">Submit</button>
+        <input class="btn btn-secondary btn-lg" type="submit">
+      </form>
   </div>
 
   

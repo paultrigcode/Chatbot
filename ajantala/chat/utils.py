@@ -2,29 +2,48 @@ from . ydialogue import YorubaDialogue
 
 from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
-from chat.dialogue.story import FLOW
+from chat.dialogue.story import TRAINING_DATA, FLOW
+from chat.dialogue import Dialogue
 
 def save_to_db(sentence):
     with open('db', 'w') as fp:
         fp.write()
 
 def load_response(sentence):
-    dailogue = YorubaDialogue()
-    response = dailogue.respond(sentence)
-    print("response", response)
-    chatbot = load_chatbot()
-    bot_response = get_bot_response(sentence, chatbot)
-    print("bot response", bot_response)
-    return response if response else bot_response 
+    # direct lookup
+    d = Dialogue()
+    tagged_response = d.parse_sentence(sentence)
+    # print("direct look up response:", response)
+    # print("substitutions:", d.substitutions)
+    response = d.refill_tags(tagged_response)
+    print('direct substitution response:', response)
+    
+
+    # old shitty lookup
+    if not response:
+        dailogue = YorubaDialogue()
+        response = dailogue.respond(sentence)
+        print("old shitty response", response)
+    
+    # chat bot lookup
+    try:
+        if not response:
+            chatbot = load_chatbot()
+            response = get_bot_response(sentence, chatbot)
+            print("bot response", response)
+    except:
+        response ="Ẹ sàlàyé síwájú si"
+    
+    return response.capitalize()
 
 
 def load_chatbot():
-    with open('chat/dialogue.txt', 'r') as fp:
+    with open('ajantala/chat/dialogue.txt', 'r') as fp:
         conversation = fp.readlines()
 
     chatbot = ChatBot("Ajantala")
     chatbot.set_trainer(ListTrainer)
-    chatbot.train(FLOW)
+    chatbot.train(TRAINING_DATA)
 
     return chatbot
 

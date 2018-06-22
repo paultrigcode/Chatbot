@@ -1,5 +1,6 @@
 import os
-
+from chat.dialogue.story import FLOW
+import random
 
 class Dialogue:
     def __init__(self):
@@ -10,10 +11,17 @@ class Dialogue:
         """ 
         Tries to classify what the user might be saying into any of the predefined categories
         """
-
-
-        # Approach A: Direct mathching i.e looks up the entire sentence in db
         pass
+
+    def parse_sentence(self, sentence):
+        # tag sentence
+        tagged_sentence = self.label_tags(sentence)
+        print('tagged sentence: ', tagged_sentence)
+        # Approach A: Direct mathching i.e looks up the entire sentence in db
+        response_list = FLOW.get(tagged_sentence)
+        response = random.choice(response_list) if response_list else None
+        return response if response else None
+        
 
 
     def label_tags(self, sentence):
@@ -37,10 +45,10 @@ class Dialogue:
                     sub_tag_list.append(word)
                     self.substitutions[tag] = sub_tag_list
                 
-                new_word = "%{0}%".format(tag) if tag else word
+                new_word = "{%" + tag + "%}" if tag else word
                 new_sentence.append(new_word)
 
-            print(self.substitutions)
+            # print(self.substitutions)
             parsed_sentences.append(" ".join(new_sentence))
         return ",".join(parsed_sentences)
 
@@ -59,15 +67,41 @@ class Dialogue:
     
     def load_word_tags(self):
         tags = {}
-        files = [files for _, __, files in os.walk('tags')][0]
+        print(os.getcwd())
+        tag_path = os.path.join('ajantala', 'chat', 'dialogue', 'tags')
+        files = [files for _, __, files in os.walk(tag_path)][0]
         for _file in files:
             tag_name = _file.replace('.txt', '')
-            with open(os.path.join('tags', _file), 'r') as fp:
+            with open(os.path.join(tag_path, _file), 'r') as fp:
                 words = [word.replace('\n', '') for word in fp.readlines()]
             tags[tag_name] = words
 
         return tags
 
+    def refill_tags(self, tagged_response):
+        # result = []
+
+        # for simple_sentence in tagged_response.split(', '):
+        #     simple_sentence_token = simple_sentence.split(' ')
+        #     untagged_simple_sentence = []
+        #     for word in simple_sentence_token:
+        #         if self.substitutions.get(word[1:-1]):
+        #             if
+
+        for tag in self.substitutions:
+            # find the occurence of the tag
+            result = ''
+            sentence_parts = tagged_response.split("{%"+tag+"%}")
+            subs = self.substitutions[tag]
+            for i in range(len(subs)):
+                result += sentence_parts[i] + subs[i]
+            tagged_response = result + sentence_parts[-1]
+        return tagged_response
+
+
+                
+
 if __name__ == '__main__':
      d = Dialogue()
-     print(d.label_tags("ekáàrọ, Túndé ati Ìyábọ́ bawo ni?"))
+     # print(d.label_tags("ekáàrọ, Túndé ati Ìyábọ́ bawo ni?"))
+     print(d.sentence_classifier("Ẹkú ojúmọ́"))

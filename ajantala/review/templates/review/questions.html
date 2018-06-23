@@ -8,7 +8,7 @@
     <nav class="navbar bg-dark d-flex justify-content-center navbar-fixed-top welcome" style="background-color: #e9ecef">
       <a class="navbar-brand" href="#">
             
-            <h1 style="color: aliceblue"><img src="{% static 'chat/images/drums.png' %}" width="200" height="100" class="d-inline-block align-center" alt="">
+            <h1 style="color: aliceblue"><img src="{% static 'images/drums.png' %}" width="200" height="100" class="d-inline-block align-center" alt="">
                 Àjàntálá
             </h1>
         </a>
@@ -23,21 +23,21 @@
           <h5 class="card-title">How can you rate Àjàntálá's performance?</h5>
                 <!--Radio group-->
                 <div class="form-check">
-                    <input class="form-check-input" name="group100" type="radio" id="radio100">
+                    <input class="form-check-input" name="q1" type="radio" value="100">
                     <label class="form-check-label" for="radio100">Very Effective</label>
                 </div>
           
                 <div class="form-check">
-                    <input class="form-check-input" name="group100" type="radio" id="radio101" checked>
+                    <input class="form-check-input" name="q1" type="radio" value="75" checked>
                     <label class="form-check-label" for="radio101">Moderately Effective</label>
                 </div>
           
                 <div class="form-check">
-                    <input class="form-check-input" name="group100" type="radio" id="radio102">
+                    <input class="form-check-input" name="q1" type="radio" value="50">
                     <label class="form-check-label" for="radio102">Slightly Effective</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" name="group100" type="radio" id="radio102">
+                    <input class="form-check-input" name="q1" type="radio" value="25">
                     <label class="form-check-label" for="radio102">Not Effective</label>
                 </div>
         </div>
@@ -48,21 +48,21 @@
             <h5 class="card-title">This is a good attempt of prolonging the existence of Yoruba language through technology</h5>
                   <!--Radio group-->
                   <div class="form-check">
-                      <input class="form-check-input" name="group101" type="radio" id="radio100">
+                      <input class="form-check-input" name="q2" type="radio" value="100">
                       <label class="form-check-label" for="radio100">Yes</label>
                   </div>
             
                   <div class="form-check">
-                      <input class="form-check-input" name="group101" type="radio" id="radio101" checked>
+                      <input class="form-check-input" name="q2" type="radio" value="25" checked>
                       <label class="form-check-label" for="radio101">No</label>
                   </div>
             
                   <div class="form-check">
-                      <input class="form-check-input" name="group101" type="radio" id="radio102">
+                      <input class="form-check-input" name="q2" type="radio" value="75">
                       <label class="form-check-label" for="radio102">Kind of</label>
                   </div>
                   <div class="form-check">
-                      <input class="form-check-input" name="group101" type="radio" id="radio102">
+                      <input class="form-check-input" name="q2" type="radio" value="50">
                       <label class="form-check-label" for="radio102">I don't Know</label>
                   </div>
           </div>
@@ -74,21 +74,21 @@
               <h5 class="card-title">How friendly is Àjàntálá's interface?</h5>
                     <!--Radio group-->
                     <div class="form-check">
-                        <input class="form-check-input" name="group102" type="radio" id="radio100">
+                        <input class="form-check-input" name="q3" type="radio" value="100">
                         <label class="form-check-label" for="radio100">Very friendly</label>
                     </div>
               
                     <div class="form-check">
-                        <input class="form-check-input" name="group102" type="radio" id="radio101" checked>
+                        <input class="form-check-input" name="q3" type="radio" value="75" checked>
                         <label class="form-check-label" for="radio101">Moderately friendly</label>
                     </div>
               
                     <div class="form-check">
-                        <input class="form-check-input" name="group102" type="radio" id="radio102">
+                        <input class="form-check-input" name="q3" type="radio" value="50">
                         <label class="form-check-label" for="radio102">Slightly friendly</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" name="group102" type="radio" id="radio102">
+                        <input class="form-check-input" name="q3" type="radio" value="25">
                         <label class="form-check-label" for="radio102">Not friendly</label>
                     </div>
             </div>
@@ -100,21 +100,21 @@
               <h5 class="card-title">Rate Àjàntálá's response time</h5>
                     <!--Radio group-->
                     <div class="form-check">
-                        <input class="form-check-input" name="group103" type="radio" id="radio100">
+                        <input class="form-check-input" name="q4" type="radio" value="100">
                         <label class="form-check-label" for="radio100">Very Fast</label>
                     </div>
               
                     <div class="form-check">
-                        <input class="form-check-input" name="group103" type="radio" id="radio101" checked>
+                        <input class="form-check-input" name="q4" type="radio" value="75" checked>
                         <label class="form-check-label" for="radio101">Fast</label>
                     </div>
               
                     <div class="form-check">
-                        <input class="form-check-input" name="group103" type="radio" id="radio102">
+                        <input class="form-check-input" name="q4" type="radio" value="50">
                         <label class="form-check-label" for="radio102">Slow</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" name="group103" type="radio" id="radio102">
+                        <input class="form-check-input" name="q4" type="radio" value="25">
                         <label class="form-check-label" for="radio102">Very Slow</label>
                     </div>
             </div>
@@ -125,21 +125,21 @@
               <h5 class="card-title">How can you rate Àjàntálá's response?</h5>
                     <!--Radio group-->
                     <div class="form-check">
-                        <input class="form-check-input" name="group104" type="radio" id="radio100">
+                        <input class="form-check-input" name="q5" type="radio" value="100">
                         <label class="form-check-label" for="radio100">Excellent</label>
                     </div>
               
                     <div class="form-check">
-                        <input class="form-check-input" name="group104" type="radio" id="radio101" checked>
+                        <input class="form-check-input" name="q5" type="radio" value="75" checked>
                         <label class="form-check-label" for="radio101">Good</label>
                     </div>
               
                     <div class="form-check">
-                        <input class="form-check-input" name="group104" type="radio" id="radio102">
+                        <input class="form-check-input" name="q5" type="radio" value="50">
                         <label class="form-check-label" for="radio102">Fair</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" name="group104" type="radio" id="radio102">
+                        <input class="form-check-input" name="q5" type="radio" value="25">
                         <label class="form-check-label" for="radio102">Bad</label>
                     </div>
             </div>
@@ -150,21 +150,21 @@
               <h5 class="card-title">How can you rate Àjàntálá's Intelligence?</h5>
                     <!--Radio group-->
                     <div class="form-check">
-                        <input class="form-check-input" name="group105" type="radio" id="radio100">
+                        <input class="form-check-input" name="q6" type="radio" value="100">
                         <label class="form-check-label" for="radio100">Very High</label>
                     </div>
               
                     <div class="form-check">
-                        <input class="form-check-input" name="group105" type="radio" id="radio101" checked>
+                        <input class="form-check-input" name="q6" type="radio" value="75" checked>
                         <label class="form-check-label" for="radio101">High</label>
                     </div>
               
                     <div class="form-check">
-                        <input class="form-check-input" name="group105" type="radio" id="radio102">
+                        <input class="form-check-input" name="q6" type="radio" value="50">
                         <label class="form-check-label" for="radio102">Low</label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" name="group105" type="radio" id="radio102">
+                        <input class="form-check-input" name="q6" type="radio" value="25">
                         <label class="form-check-label" for="radio102">Very Low</label>
                     </div>
             </div>
@@ -176,21 +176,21 @@
               <h5 class="card-title">Does Àjàntálá's response potray a Yorùbá speaker?</h5>
                     <!--Radio group-->
                     <div class="form-check">
-                        <input class="form-check-input" name="group106" type="radio" id="radio100">
+                        <input class="form-check-input" name="q7" type="radio" value="100">
                         <label class="form-check-label" for="radio100"> Yes </label>
                     </div>
               
                     <div class="form-check">
-                        <input class="form-check-input" name="group106" type="radio" id="radio101" checked>
+                        <input class="form-check-input" name="q7" type="radio" value="25" checked>
                         <label class="form-check-label" for="radio101"> No</label>
                     </div>
               
                     <div class="form-check">
-                        <input class="form-check-input" name="group106" type="radio" id="radio102">
+                        <input class="form-check-input" name="q7" type="radio" value="75">
                         <label class="form-check-label" for="radio102"> Kindoff </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" name="group106" type="radio" id="radio102">
+                        <input class="form-check-input" name="q7" type="radio" value="50">
                         <label class="form-check-label" for="radio102">I don't Know</label>
                     </div>
             </div>
@@ -198,7 +198,3 @@
         <input class="btn btn-secondary btn-lg" type="submit">
       </form>
   </div>
-
-  
-
-

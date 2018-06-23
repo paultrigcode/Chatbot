@@ -34,7 +34,7 @@ def load_response(sentence):
     except:
         response ="Ẹ sàlàyé síwájú si"
     
-    return response.capitalize()
+    return str(response).capitalize()
 
 
 def load_chatbot():

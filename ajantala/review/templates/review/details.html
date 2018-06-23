@@ -1,0 +1,23 @@
+{% load static %}
+
+
+<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" id="bootstrap-css">
+<link href="{% static 'css/mine.css' %}" rel="stylesheet">  
+
+<div class="container" >
+    <nav class="navbar bg-dark d-flex justify-content-center navbar-fixed-top welcome" style="background-color: #e9ecef">
+      <a class="navbar-brand" href="#">
+            
+            <h1 style="color: aliceblue"><img src="{% static 'chat/images/drums.png' %}" width="200" height="100" class="d-inline-block align-center" alt="">
+                Àjàntálá
+            </h1>
+        </a>
+    </nav>
+</div>
+
+<div class="container">
+    <form method="POST">
+        <input type="text" name="name">
+        <input type="submit">
+    </form>
+</div>
